@@ -3,15 +3,15 @@ var app = angular
 	.config(function($routeProvider, $locationProvider){
 		$routeProvider
 			.when("/home", {
-				templateUrl: "templates/home.html",
+				templateUrl: "/",
 				controller: "homeController"
 			})
 			.when("/courses", {
-				templateUrl: "templates/courses.html",
+				templateUrl: "/courses/",
 				controller: "coursesController"
 			})
 			.when("/students", {
-				templateUrl: "templates/students.html",
+				templateUrl: "/students/",
 				controller: "studentsController"
 			})
 			$locationProvider.html5Mode(true);

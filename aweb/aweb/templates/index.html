@@ -1,13 +1,14 @@
+{% load staticfiles %}
 <!DOCTYPE html>
-
 <html ng-app="Demo">
 <head>
+      <base href="/">
     <title>Web site using Angular js</title>
-    <link href="css/style.css" rel="stylesheet" />
-    <script src="js/angular.js"></script>
-    <script src="js/angular-route.js"></script>
-    <script src="js/script.js"></script>
-    
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <script src="{% static 'js/angular.js' %}"></script>
+    <script src="{% static 'js/angular-route.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <!--{% static 'css/main.css' %}?b={{BPC}}-->
     <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-sanitize.min.js"></script>-->
