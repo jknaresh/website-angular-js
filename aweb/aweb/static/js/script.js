@@ -1,8 +1,10 @@
 var app = angular
 	.module("Demo", ["ngRoute"])
 	.config(function($interpolateProvider) {
-    $interpolateProvider.startSymbol('{[{');
-    $interpolateProvider.endSymbol('}]}');
+	    /* Note $interpolateProvider is used to distinguish Django
+	    interpolate with Angular interpolate provider */
+        $interpolateProvider.startSymbol('{[{');
+        $interpolateProvider.endSymbol('}]}');
     })
 	.config(function($routeProvider, $locationProvider){
 		$routeProvider
@@ -15,8 +17,8 @@ var app = angular
 				controller: "coursesController"
 			})
 			.when("/home",{
-				templateUrl: "courses.html",
-				controller: "coursesController"
+				templateUrl: "home.html",
+				controller: "homeController"
 			})
 			.when("/students", {
 				templateUrl: "students.html",
@@ -35,4 +37,3 @@ var app = angular
 	})
 
 
-	/***Note $interpolateProvider is used to distinguish Django interpolate with Angular interpolate provider***/
