@@ -1,17 +1,25 @@
 var app = angular
 	.module("Demo", ["ngRoute"])
+	.config(function($interpolateProvider) {
+    $interpolateProvider.startSymbol('{[{');
+    $interpolateProvider.endSymbol('}]}');
+    })
 	.config(function($routeProvider, $locationProvider){
 		$routeProvider
-			.when("/home", {
-				templateUrl: "/",
+			.when("/", {
+				templateUrl: "home.html",
 				controller: "homeController"
 			})
 			.when("/courses", {
-				templateUrl: "/courses/",
+				templateUrl: "courses.html",
+				controller: "coursesController"
+			})
+			.when("/home",{
+				templateUrl: "courses.html",
 				controller: "coursesController"
 			})
 			.when("/students", {
-				templateUrl: "/students/",
+				templateUrl: "students.html",
 				controller: "studentsController"
 			})
 			$locationProvider.html5Mode(true);
@@ -25,3 +33,6 @@ var app = angular
 	.controller("studentsController", function($scope){
 		$scope.studentsPage = "Students page message";
 	})
+
+
+	/***Note $interpolateProvider is used to distinguish Django interpolate with Angular interpolate provider***/

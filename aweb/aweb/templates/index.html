@@ -7,7 +7,6 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet" />
     <script src="{% static 'js/angular.js' %}"></script>
     <script src="{% static 'js/angular-route.js' %}"></script>
-    <script src="{% static 'js/script.js' %}"></script>
     <!--{% static 'css/main.css' %}?b={{BPC}}-->
     <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.js"></script>
@@ -30,7 +29,7 @@
             <a href="students">Students</a>
         </td>
         <td class="mainContent">
-            <ng-view></ng-view>
+             <div ng-view></div>
         </td>
     </tr>
     <tr>
@@ -39,5 +38,26 @@
         </td>
     </tr>
 </table>
+<!-- Template for home page , course page , student page-->
+<script type="text/ng-template" id="home.html">
+    <div class="view">
+        <h1>home</h1>
+        {[{homePage}]}
+    </div>
+</script>
+<script type="text/ng-template" id="courses.html">
+    <div class="view">
+        <h2>Courses</h2>
+        {[{coursesPage}]}
+    </div>
+</script>
+<script type="text/ng-template" id="students.html">
+    <div class="view">
+        <h3>Students</h3>
+        {[{studentsPage}]}
+    </div>
+</script>
+<!-- End of template-->
+<script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
